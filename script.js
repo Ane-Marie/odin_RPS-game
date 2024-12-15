@@ -1,4 +1,4 @@
-// create a function to get computer's choice using a random number:
+// get computer choice using a random number:
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*3);
@@ -14,7 +14,7 @@ function getComputerChoice() {
     }
 }
 
-//create a function to get player choice/ case insesitive:
+//get player choice/ case insesitive:
 
 function getHumanChoice() {
     let input = prompt("Enter your choice: Rock, Paper, Scissors?");
@@ -24,23 +24,47 @@ function getHumanChoice() {
     else {
         console.log("Please enter a valid choice. Computer wins this round!");
     }
-}
+} 
 
-humanScore = 0;
-computerScore = 0; //create score variables
+//logic to play game(five rounds), keep scores and declare overall winner.
 
-// create logic to play one round
-function playRound(humanChoice, computerChoice) {
-    if(humanChoice === computerChoice) {
-        console.log("It's a draw!");
+function playGame() {
+    humanScore = 0;     //score variables
+    computerScore = 0;
 
-    else if((humanChoice === "rock" && computerChoice === "scissors") ||
-            (humanChoice === "scissors" && computerChoice === "paper") ||
-            (humanChoice === "paper" && computerChoice === "rock")) {
-                console.log(`You win this round, ${humanChoice} beats ${computerChoice}!`);
+    for(round = 0; round < 5; round++) {
+        function playRound(humanChoice, computerChoice) {  //logic to play one round
+            if(humanChoice === computerChoice) {
+                console.log("It's a draw!");
             }
-    else {
-        console.log(`Computer wins this round, ${computerChoice} beats ${humanChoice}!`);
+            else if((humanChoice === "rock" && computerChoice === "scissors") ||
+                    (humanChoice === "scissors" && computerChoice === "paper") ||
+                    (humanChoice === "paper" && computerChoice === "rock")) 
+                {
+                console.log(`You win this round, ${humanChoice} beats ${computerChoice}!`);
+                humanScore++;
+            }
+            else {
+                console.log(`Computer wins this round, ${computerChoice} beats ${humanChoice}!`);
+                computerScore++;
+            }
+        }
+
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
     }
+    
+    if (humanScore === computerScore) {
+        console.log("It's a draw overall!")
+    }
+    else if (humanScore > computerScore) {
+        console.log(`Your win the game and your final score is: ${humanScore}`);
+    }
+    else {
+        console.log(`Computer wins the game and it's final score is: ${computerScore}`);
     }
 }
+
+playGame();
