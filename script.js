@@ -13,3 +13,16 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+//create a function to get player choice/ case insesitive:
+
+function getHumanChoice() {
+    let input = prompt("Enter your choice: Rock, Paper, Scissors?");
+    if(input.toLowerCase() === "rock" || input.toLowerCase() === "paper" || input.toLowerCase() === "scissors") {
+        return input;
+    }
+    else {
+        console.log("Please enter a valid choice. Computer wins this round!");
+    }
+}
+console.log(getHumanChoice());
