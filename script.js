@@ -25,4 +25,8 @@ function getHumanChoice() {
         console.log("Please enter a valid choice. Computer wins this round!");
     }
 }
-console.log(getHumanChoice());
+
+humanScore = 0;
+computerScore = 0; //create score variables
+
+
