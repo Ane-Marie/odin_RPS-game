@@ -29,4 +29,18 @@ function getHumanChoice() {
 humanScore = 0;
 computerScore = 0; //create score variables
 
+// create logic to play one round
+function playRound(humanChoice, computerChoice) {
+    if(humanChoice === computerChoice) {
+        console.log("It's a draw!");
 
+    else if((humanChoice === "rock" && computerChoice === "scissors") ||
+            (humanChoice === "scissors" && computerChoice === "paper") ||
+            (humanChoice === "paper" && computerChoice === "rock")) {
+                console.log(`You win this round, ${humanChoice} beats ${computerChoice}!`);
+            }
+    else {
+        console.log(`Computer wins this round, ${computerChoice} beats ${humanChoice}!`);
+    }
+    }
+}
