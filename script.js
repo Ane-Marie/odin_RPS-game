@@ -1,25 +1,26 @@
-// get computer choice using a random number:
+// get computer's choice using a random number:
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*3);
 
-    if(choice === 0) {
-        return "rock";
-    }
-    else if(choice === 1) {
-        return "paper";
-    }
-    else {
-        return "scissors";
+    switch(choice) {
+        case 0:
+            return "rock";
+        case 1:
+            return "paper";
+        case 2:
+            return "scissors";
+        default:
+            console.log("Something went wrong! Please start again.");
     }
 }
 
-//get player choice/ case insesitive:
+//get player's choice - case insesitive:
 
 function getHumanChoice() {
     let input = prompt("Enter your choice: Rock, Paper, Scissors?");
     if(input.toLowerCase() === "rock" || input.toLowerCase() === "paper" || input.toLowerCase() === "scissors") {
-        return input;
+        return input.toLowerCase();
     }
     else {
         console.log("Please enter a valid choice. Computer wins this round!");
