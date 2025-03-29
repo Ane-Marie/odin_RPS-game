@@ -1,5 +1,22 @@
-// get computer's choice using a random number:
+const divOne = document.createElement("div");
+divOne.classList.add("intro"); 
 
+const body = document.querySelector("body");
+body.appendChild(divOne);
+
+const header = document.createElement("h1");
+header.textContent = "Welcome to our game of Rock, Paper, Scissors!";
+header.style.textAlign = "center";
+
+const para = document.createElement("p");
+para.textContent = "If you would like to play please make your choice bellow to start round one:";
+para.style.textAlign = "center";
+
+divOne.appendChild(header);
+divOne.appendChild(para);
+
+
+// get computer's choice using a random number:
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*3);
 
@@ -15,57 +32,39 @@ function getComputerChoice() {
     }
 }
 
-//get player's choice - case insesitive:
 
-function getHumanChoice() {
-    let input = prompt("Enter your choice: Rock, Paper, Scissors?");
-    if(input.toLowerCase() === "rock" || input.toLowerCase() === "paper" || input.toLowerCase() === "scissors") {
-        return input.toLowerCase();
-    }
-    else {
-        console.log("Please enter a valid choice. Computer wins this round!");
-    }
-} 
+//get player's choice:
+const divTwo = document.createElement("div");
+divTwo.classList.add("playerChoice");
+divTwo.setAttribute("style", "display: flex; justify-content: center; gap: 110px; padding: 30px");
+body.appendChild(divTwo);
 
-//logic to play game(five rounds), keep scores and declare overall winner.
+const buttonRock = document.createElement("button");
+buttonRock.setAttribute("id", "rock");
+buttonRock.textContent = "Rock";
+buttonRock.setAttribute("style", "color: black; background: lightblue; border-radius: 20px; padding: 50px");
 
-function playGame() {
-    humanScore = 0;     //score variables
-    computerScore = 0;
+const buttonPaper = document.createElement("button");
+buttonPaper.setAttribute("id", "paper");
+buttonPaper.textContent = "Paper";
+buttonPaper.setAttribute("style", "color: black; background: lightblue; border-radius: 20px; padding: 50px");
 
-    for(round = 0; round < 5; round++) {
-        function playRound(humanChoice, computerChoice) {  //logic to play one round
-            if(humanChoice === computerChoice) {
-                console.log("It's a draw!");
-            }
-            else if((humanChoice === "rock" && computerChoice === "scissors") ||
-                    (humanChoice === "scissors" && computerChoice === "paper") ||
-                    (humanChoice === "paper" && computerChoice === "rock")) 
-                {
-                console.log(`You win this round, ${humanChoice} beats ${computerChoice}!`);
-                humanScore++;
-            }
-            else {
-                console.log(`Computer wins this round, ${computerChoice} beats ${humanChoice}!`);
-                computerScore++;
-            }
-        }
+const buttonScissors = document.createElement("button");
+buttonScissors.setAttribute("id", "scissors");
+buttonScissors.textContent = "Scissors";
+buttonScissors.setAttribute("style", "color: black; background: lightblue; border-radius: 20px; padding: 50px");
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+divTwo.appendChild(buttonRock);
+divTwo.appendChild(buttonPaper);
+divTwo.appendChild(buttonScissors);
 
-        playRound(humanSelection, computerSelection);
-    }
-    
-    if (humanScore === computerScore) {
-        console.log("It's a draw overall!")
-    }
-    else if (humanScore > computerScore) {
-        console.log(`Your win the game and your final score is: ${humanScore}`);
-    }
-    else {
-        console.log(`Computer wins the game and it's final score is: ${computerScore}`);
-    }
-}
 
-playGame();
+
+ 
+
+
+
+
+/*btns.forEach(function(e)) {
+    e.addEventListener("click", ...
+*/
