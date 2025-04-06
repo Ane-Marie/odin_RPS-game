@@ -1,16 +1,15 @@
 Welcome to the Rock Paper Scissors Game!
 
 How to Play: 
-
-Choose your option of either Rock, Paper or Scissors from the screen.
-Computer's Turn: The computer will randomly select one of the three options.
+Choose your option of either Rock, Paper or Scissors from the screen.  
+Computer's Turn: The computer will randomly select one of the three options.  
 
 Rules: 
 
-First to FIVE points wins the game! 
-Rock beats Scissors
+First to FIVE points wins the game!  
+Rock beats Scissors  
 Scissors beats Paper
-Paper beats Rock
+Paper beats Rock  
 
 To start playing:
 
