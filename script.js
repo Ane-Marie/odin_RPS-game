@@ -23,20 +23,20 @@ divOne.appendChild(para);
 const divTwo = document.createElement("div");
 divTwo.setAttribute("id", "playerChoice");
 divTwo.setAttribute
-("style", "display: flex; justify-content: center; gap: 110px; margin-top: 50px; padding: 40px; border-top: solid black 5px; border-bottom: solid black 5px; margin-bottom: 50px;");
+("style", "display: flex; justify-content: center; gap: 110px; margin-top: 50px; padding: 30px; border-top: solid black 5px; border-bottom: solid black 5px; margin-bottom: 10px;");
 body.appendChild(divTwo);
 
 const buttonRock = document.createElement("button");
 buttonRock.textContent = "Rock";
-buttonRock.setAttribute("style", "color: white; font-size: 40px; background: black; border-radius: 20px; padding: 50px");
+buttonRock.setAttribute("style", "color: white; font-size: 35px; background: black; border-radius: 20px; padding: 30px");
 
 const buttonPaper = document.createElement("button");
 buttonPaper.textContent = "Paper";
-buttonPaper.setAttribute("style", "color: white; font-size: 40px; background: black; border-radius: 20px; padding: 50px");
+buttonPaper.setAttribute("style", "color: white; font-size: 35px; background: black; border-radius: 20px; padding: 30px");
 
 const buttonScissors = document.createElement("button");
 buttonScissors.textContent = "Scissors";
-buttonScissors.setAttribute("style", "color: white; font-size: 40px; background: black; border-radius: 20px; padding: 50px");
+buttonScissors.setAttribute("style", "color: white; font-size: 35px; background: black; border-radius: 20px; padding: 30px");
 
 divTwo.appendChild(buttonRock);
 divTwo.appendChild(buttonPaper);
